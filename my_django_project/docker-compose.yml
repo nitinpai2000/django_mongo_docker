@@ -1,0 +1,31 @@
+version: '3.7'
+services: 
+  web: 
+    image: my-django-app
+    ports:
+      - "8000:8000"
+    environment: 
+        - DB_HOST=db
+        - DB_NAME=user
+    depends_on: 
+        - db
+    deploy:
+      resources:
+        limits:          
+          memory: 100M
+        reservations:          
+          memory: 20M
+  db:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017" 
+    deploy:
+      resources:
+        limits:          
+          memory: 100M
+        reservations:          
+          memory: 20M 
+  
+volumes:
+   postgres_data:
