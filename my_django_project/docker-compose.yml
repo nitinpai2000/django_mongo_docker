@@ -12,9 +12,10 @@ services:
     deploy:
       resources:
         limits:          
-          memory: 100M
+          memory: 40M
+          cpus: '0.03'
         reservations:          
-          memory: 20M
+          memory: 10M
   db:
     image: mongo
     restart: always
@@ -23,9 +24,12 @@ services:
     deploy:
       resources:
         limits:          
-          memory: 100M
+          memory: 50M
+          cpus: '0.05'
         reservations:          
-          memory: 20M 
+          memory: 20M
+    volumes:
+          - F:/Temp/mongo_docker_data:/data/db
   
 volumes:
-   postgres_data:
+   postgres_data: 
