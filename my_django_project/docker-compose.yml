@@ -13,7 +13,7 @@ services:
       resources:
         limits:          
           memory: 40M
-          cpus: '0.01'
+          cpus: '0.2'
         reservations:          
           memory: 20M
   db:
@@ -26,7 +26,7 @@ services:
       resources:
         limits:          
           memory: 50M
-          cpus: '0.03'
+          cpus: '0.09'
         reservations:          
           memory: 20M
     volumes:
