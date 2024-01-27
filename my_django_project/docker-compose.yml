@@ -19,13 +19,14 @@ services:
   db:
     image: mongo
     restart: always
+    command: mongod --quiet --logpath /dev/null 
     ports:
       - "27017:27017" 
     deploy:
       resources:
         limits:          
           memory: 50M
-          cpus: '0.04'
+          cpus: '0.03'
         reservations:          
           memory: 20M
     volumes:
